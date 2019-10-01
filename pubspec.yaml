@@ -1,8 +1,8 @@
 name: alps_rfid_n6737
 description: This is a Flutter plugin for supporting RFID to tablet Model. Alps ax6737_65_n
-version: 0.0.1
+version: 0.0.2
 author: Amr Eniou <amorenew@gmail.com>
-homepage:
+homepage: https://github.com/amorenew/alps_rfid_n6737
 
 environment:
   sdk: ">=2.1.0 <3.0.0"

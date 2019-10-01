@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/alps_rfid_n6737.iml" filepath="$PROJECT_DIR$/alps_rfid_n6737.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/alps_rfid_n6737_android.iml" filepath="$PROJECT_DIR$/android/alps_rfid_n6737_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/android/alps_rfid_n6737_example_android.iml" filepath="$PROJECT_DIR$/example/android/alps_rfid_n6737_example_android.iml" />
+    </modules>
+  </component>
+</project>
