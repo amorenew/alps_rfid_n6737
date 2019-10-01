@@ -1,16 +1,25 @@
 # alps_rfid_n6737_example
 
-Demonstrates how to use the alps_rfid_n6737 plugin.
+# alps_rfid_n6737
+
+A new flutter plugin project.
+  alps_rfid_n6737: ^0.0.1
+https://pub.dev/packages/alps_rfid_n6737
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+##### Start reading RFID tags
+    ```AlpsRfidN6737.startRead();```
+##### Setting RSSI Level
+Min Level is 50 and Max is 90
+    ```AlpsRfidN6737.setPowerLevel(level: 60);```
+##### Keep always reading RFID tags
+    ```AlpsRfidN6737.continuousRead();```
+##### Listen to RFID tags
+    ```AlpsRfidN6737.dataStream.receiveBroadcastStream().listen(rfidBoarding);
+    void rfidBoarding(dynamic rfidId) { }```
+##### Close RFID Sensor
+    ```AlpsRfidN6737.stopRead();```
+##### Read One RFID tag
+    ```AlpsRfidN6737.readOne();```
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
