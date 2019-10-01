@@ -5,6 +5,7 @@ A new flutter plugin project.
 https://pub.dev/packages/alps_rfid_n6737
 
 ## Getting Started
+```import 'package:alps_rfid_n6737/alps_rfid_n6737.dart';```
 
 ##### Start reading RFID tags
     ```AlpsRfidN6737.startRead();```
