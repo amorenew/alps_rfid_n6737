@@ -11,12 +11,13 @@ https://pub.dev/packages/alps_rfid_n6737
     ```AlpsRfidN6737.startRead();```
 ##### Setting RSSI Level
 Min Level is 50 and Max is 90
+
     ```AlpsRfidN6737.setPowerLevel(level: 60);```
 ##### Keep always reading RFID tags
     ```AlpsRfidN6737.continuousRead();```
 ##### Listen to RFID tags
     ```AlpsRfidN6737.dataStream.receiveBroadcastStream().listen(rfidBoarding);
-    void rfidBoarding(dynamic rfidId) { }```
+       void rfidBoarding(dynamic rfidId) { }```
 ##### Close RFID Sensor
     ```AlpsRfidN6737.stopRead();```
 ##### Read One RFID tag
