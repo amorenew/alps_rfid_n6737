@@ -24,6 +24,7 @@ class AlpsRfidN6737Plugin : MethodCallHandler {
         private val METHOD_CLOSE = "close"
         private val METHOD_QUARY = "quary"
         private val METHOD_READ_ONE = "readOne"
+        private val METHOD_READ_BY_TIMER = "readByTimer"
         private val METHOD_CONTINUOUS_READ = "continuousRead"
 
         private val CHANNEL_DATA = "alps_rfid_n6737/data"
@@ -102,6 +103,8 @@ class AlpsRfidN6737Plugin : MethodCallHandler {
                 stopRead()
             METHOD_READ_ONE ->
                 readOne()
+            METHOD_READ_BY_TIMER ->
+                readByTimer()
             METHOD_QUARY ->
                 quary()
             METHOD_CONTINUOUS_READ ->
@@ -133,6 +136,10 @@ class AlpsRfidN6737Plugin : MethodCallHandler {
 
     private fun readOne() {
         serialPortHelper.readOne();
+        result.success(true);
+    }
+    private fun readByTimer() {
+        serialPortHelper.readByTimer();
         result.success(true);
     }
 

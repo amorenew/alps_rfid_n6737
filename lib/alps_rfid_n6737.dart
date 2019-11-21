@@ -36,6 +36,11 @@ class AlpsRfidN6737 {
     return _channel.invokeMethod('readOne');
   }
 
+  ///read one rfid tag by timer for continuous reading
+  static Future<bool> readByTimer() async {
+    return _channel.invokeMethod('readByTimer');
+  }
+
   ///quary rfid rssi
   static Future<bool> quary() async {
     return _channel.invokeMethod('quary');

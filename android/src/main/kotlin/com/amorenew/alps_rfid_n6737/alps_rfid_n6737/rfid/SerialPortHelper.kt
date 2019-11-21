@@ -1,8 +1,15 @@
 package com.amorenew.alps_rfid_n6737.alps_rfid_n6737.rfid
 
 import android.os.Handler
+import io.reactivex.Observable
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.Disposable
+import io.reactivex.schedulers.Schedulers
+import java.util.concurrent.TimeUnit
+
 
 class SerialPortHelper internal constructor(private val serialListener: SerialListener) {
+    private var readDisposable: Disposable? = null
     private val manager: Manager
     var isOpen = false
         private set
@@ -59,12 +66,14 @@ class SerialPortHelper internal constructor(private val serialListener: SerialLi
 
     internal fun close() {
         manager.close()
+        readDisposable?.dispose();
         isOpen = false
     }
 
     internal fun stopRead() {
         if (isOpen)
             manager.stopRead()
+        readDisposable?.dispose();
     }
 
     internal fun quary() {
@@ -75,6 +84,16 @@ class SerialPortHelper internal constructor(private val serialListener: SerialLi
     internal fun readOne() {
         if (isOpen)
             manager.readOne()
+    }
+
+    internal fun readByTimer() {
+        readDisposable = Observable.timer(500, TimeUnit.MILLISECONDS)
+                .subscribeOn(Schedulers.newThread())
+                .repeat()
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe {
+                    readOne()
+                }
     }
 
     internal fun continuousRead() {

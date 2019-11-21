@@ -13,11 +13,12 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   String _platformVersion = 'Unknown';
-
+  ScrollController _scrollController;
   @override
   void initState() {
     super.initState();
     initPlatformState();
+    _scrollController = new ScrollController();
   }
 
   // Platform messages are asynchronous, so we initialize in an async method.
@@ -45,11 +46,13 @@ class _MyAppState extends State<MyApp> {
   void rdfidDataListener(dynamic event) {
     print('dart $event');
     setState(() {
-      tags += event + '\n';
+      tags.add(event);
+      _scrollController.animateTo(_scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 500), curve: Curves.easeOut);
     });
   }
 
-  String tags = '';
+  List<String> tags = [];
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +64,16 @@ class _MyAppState extends State<MyApp> {
         body: Center(
           child: Column(
             children: <Widget>[
-              Text(tags),
+              Container(
+                height: 250,
+                child: ListView.builder(
+                  controller: _scrollController,
+                  itemCount: tags.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Text(tags[index]);
+                  },
+                ),
+              ),
               RaisedButton(
                 child: Text('startRead'),
                 onPressed: () {
@@ -78,6 +90,12 @@ class _MyAppState extends State<MyApp> {
                 child: Text('readOne'),
                 onPressed: () {
                   AlpsRfidN6737.readOne();
+                },
+              ),
+              RaisedButton(
+                child: Text('readByTimer'),
+                onPressed: () {
+                  AlpsRfidN6737.readByTimer();
                 },
               ),
               RaisedButton(
@@ -99,9 +117,9 @@ class _MyAppState extends State<MyApp> {
                 },
               ),
               RaisedButton(
-                child: Text('Set Power Level to 50'),
+                child: Text('Set Power Level to 90'),
                 onPressed: () {
-                  AlpsRfidN6737.setPowerLevel(level: 10);
+                  AlpsRfidN6737.setPowerLevel(level: 90);
                 },
               ),
               Text('Running on: $_platformVersion\n'),

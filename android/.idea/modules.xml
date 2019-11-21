@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/alps_rfid_n6737.iml" filepath="$PROJECT_DIR$/alps_rfid_n6737.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../example/android/android.iml" filepath="$PROJECT_DIR$/../example/android/android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../example/android/app/app.iml" filepath="$PROJECT_DIR$/../example/android/app/app.iml" />
     </modules>
   </component>
 </project>
