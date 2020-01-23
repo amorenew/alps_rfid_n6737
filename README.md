@@ -1,7 +1,7 @@
 # alps_rfid_n6737
 
 A new flutter plugin project.
-  alps_rfid_n6737: ^0.0.1
+  alps_rfid_n6737: ^1.0.1
 https://pub.dev/packages/alps_rfid_n6737
 
 ## Getting Started
