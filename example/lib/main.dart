@@ -99,6 +99,14 @@ class _MyAppState extends State<MyApp> {
                 },
               ),
               RaisedButton(
+                child: Text('clear'),
+                onPressed: () {
+                  setState(() {
+                    tags.clear();
+                  });
+                },
+              ),
+              RaisedButton(
                 child: Text('close'),
                 onPressed: () {
                   AlpsRfidN6737.close();
