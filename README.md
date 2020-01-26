@@ -24,5 +24,6 @@ Min Level is 50 and Max is 90
     `AlpsRfidN6737.readOne();`
 
 ##### Read One by Timer every 500 millisecond RFID tag
+###### I added it to force fast reading because RFID reader is reading one tag per time.
     `AlpsRfidN6737.readByTimer();`
 
