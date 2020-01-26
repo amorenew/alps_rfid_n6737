@@ -4,7 +4,14 @@ A new flutter plugin project.
   alps_rfid_n6737: ^0.0.1
 https://pub.dev/packages/alps_rfid_n6737
 
-## Getting Started
+## Running example
+Build `flutter build apk`
+
+Install `adb install -r build/app/outputs/apk/release/app-release.apk`
+
+You cannot install/start app from VS Code because that uses 64 bit. Running "without debug" has a similar problem. Android Studio might work.
+
+## For your own project
 `import 'package:alps_rfid_n6737/alps_rfid_n6737.dart';`
 
 ##### Start reading RFID tags
